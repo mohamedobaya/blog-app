@@ -27,7 +27,6 @@ const BlogList = ({ theme }: Props) => {
 
   if (isLoading) return <LoadingBlogs />;
   if (error) return <div>Error: {error}</div>;
-  console.log(data, sortedBlogs);
 
   return (
     <Stack>
