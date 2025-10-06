@@ -1,18 +1,13 @@
 import { Stack, TextField, Typography } from "@mui/material";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import GoogleIcon from "@mui/icons-material/Google";
 import ButtonCustom from "../buttons/ButtonCustom";
 import { darkModeColors, lightModeColors } from "../../assets/styles/colors";
 import { blogCardStyle } from "../../assets/styles/BlogCardStyle";
 import { useForm } from "react-hook-form";
 import AvatarUpload from "../buttons/AvatarUpload";
 import { useNavigate } from "react-router";
-import {
-  createUserWithEmailAndPassword,
-  signInWithPopup,
-  updateProfile,
-} from "firebase/auth";
-import { auth, googleProvider, db } from "../../config/firebase";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, db } from "../../config/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { useAppSelector } from "../../redux/hooks";
 import { useState } from "react";
@@ -84,25 +79,6 @@ const RegisterFrom = ({ theme }: Props) => {
       }
     }
   };
-
-  // const handleGoogleRegister = async () => {
-  //   try {
-  //     const result = await signInWithPopup(auth, googleProvider);
-
-  //     // Create user document for Google sign-in users too
-  //     await setDoc(doc(db, "users", result.user.uid), {
-  //       uid: result.user.uid,
-  //       username: result.user.displayName,
-  //       email: result.user.email,
-  //       photoURL: result.user.photoURL,
-  //     });
-
-  //     navigate("/"); // Redirect after successful Google sign-in
-  //   } catch (error) {
-  //     console.error("Google registration error:", error);
-  //     alert("Google registration failed. Please try again.");
-  //   }
-  // };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -244,19 +220,6 @@ const RegisterFrom = ({ theme }: Props) => {
         isSubmit={true}
         onClick={() => {}}
       />
-
-      {/* <ButtonCustom
-        theme={theme}
-        content="google register"
-        color={
-          theme === "light"
-            ? lightModeColors.background
-            : darkModeColors.background
-        }
-        ButtonIcon={GoogleIcon}
-        isSubmit={false}
-        onClick={handleGoogleRegister}
-      /> */}
     </Stack>
   );
 };

@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Stack, TextField, Typography } from "@mui/material";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import GoogleIcon from "@mui/icons-material/Google";
 import ButtonCustom from "../buttons/ButtonCustom";
 import { darkModeColors, lightModeColors } from "../../assets/styles/colors";
 import { blogCardStyle } from "../../assets/styles/BlogCardStyle";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../../config/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../config/firebase";
 import { useAppSelector } from "../../redux/hooks";
 import ErrorModal from "../ErrorModal";
 
@@ -89,26 +88,6 @@ const LoginFrom = ({ theme }: Props) => {
       }
     }
   };
-
-  // const handleGoogleSignIn = async () => {
-  //   try {
-  //     await signInWithPopup(auth, googleProvider);
-  //     navigate("/"); // Redirect after successful Google sign-in
-  //   } catch (error: any) {
-  //     console.error("Google sign-in error:", error);
-
-  //     if (error.code === "auth/popup-closed-by-user") {
-  //       showError("Sign-in Cancelled", "Google sign-in was cancelled.");
-  //     } else if (error.code === "auth/popup-blocked") {
-  //       showError("Popup Blocked", "Please allow popups for this website.");
-  //     } else {
-  //       showError(
-  //         "Google Sign-in Failed",
-  //         "An error occurred during Google sign-in. Please try again."
-  //       );
-  //     }
-  //   }
-  // };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -199,18 +178,7 @@ const LoginFrom = ({ theme }: Props) => {
           isSubmit={true}
           onClick={() => {}}
         />
-        {/* <ButtonCustom
-          theme={theme}
-          content="google login"
-          color={
-            theme === "light"
-              ? lightModeColors.background
-              : darkModeColors.background
-          }
-          ButtonIcon={GoogleIcon}
-          isSubmit={false}
-          onClick={handleGoogleSignIn}
-        /> */}
+
         <ButtonCustom
           theme={theme}
           content="register"
