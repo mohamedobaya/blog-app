@@ -1,0 +1,78 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "lizardlover",
+      "fullName": "Alice Johnson",
+      "email": "alice.johnson@example.com"
+    },
+    {
+      "id": 2,
+      "username": "ai_guru",
+      "fullName": "Bob Smith",
+      "email": "bob.smith@example.com"
+    },
+    {
+      "id": 3,
+      "username": "space_dreamer",
+      "fullName": "Charlie Brown",
+      "email": "charlie.brown@example.com"
+    },
+    {
+      "id": 4,
+      "username": "healthylife",
+      "fullName": "Diana Prince",
+      "email": "diana.prince@example.com"
+    },
+    {
+      "id": 5,
+      "username": "webdev_master",
+      "fullName": "Ethan Clark",
+      "email": "ethan.clark@example.com"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Lizards",
+      "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.",
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "title": "The Future of AI",
+      "description": "Artificial intelligence is rapidly evolving, shaping industries like healthcare, education, and finance. Its potential impact is limitless.",
+      "authorId": 2
+    },
+    {
+      "id": 3,
+      "title": "Space Exploration",
+      "description": "From the Moon to Mars, space exploration continues to inspire innovation and push the boundaries of human knowledge.",
+      "authorId": 3
+    },
+    {
+      "id": 4,
+      "title": "Healthy Living",
+      "description": "A balanced diet, regular exercise, and mindfulness are key to maintaining a healthy lifestyle in today’s fast-paced world.",
+      "authorId": 4
+    },
+    {
+      "id": 5,
+      "title": "Web Development Trends",
+      "description": "Modern web development embraces frameworks, responsive design, and performance optimization to deliver seamless digital experiences.",
+      "authorId": 5
+    },
+    {
+      "id": 6,
+      "title": "Climate Change Awareness",
+      "description": "Rising global temperatures and environmental challenges highlight the importance of sustainable practices and renewable energy.",
+      "authorId": 2
+    },
+    {
+      "id": 7,
+      "title": "Photography Basics",
+      "description": "Understanding light, composition, and perspective is the foundation of capturing stunning photographs.",
+      "authorId": 3
+    }
+  ]
+}
