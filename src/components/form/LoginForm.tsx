@@ -90,25 +90,25 @@ const LoginFrom = ({ theme }: Props) => {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-      navigate("/"); // Redirect after successful Google sign-in
-    } catch (error: any) {
-      console.error("Google sign-in error:", error);
+  // const handleGoogleSignIn = async () => {
+  //   try {
+  //     await signInWithPopup(auth, googleProvider);
+  //     navigate("/"); // Redirect after successful Google sign-in
+  //   } catch (error: any) {
+  //     console.error("Google sign-in error:", error);
 
-      if (error.code === "auth/popup-closed-by-user") {
-        showError("Sign-in Cancelled", "Google sign-in was cancelled.");
-      } else if (error.code === "auth/popup-blocked") {
-        showError("Popup Blocked", "Please allow popups for this website.");
-      } else {
-        showError(
-          "Google Sign-in Failed",
-          "An error occurred during Google sign-in. Please try again."
-        );
-      }
-    }
-  };
+  //     if (error.code === "auth/popup-closed-by-user") {
+  //       showError("Sign-in Cancelled", "Google sign-in was cancelled.");
+  //     } else if (error.code === "auth/popup-blocked") {
+  //       showError("Popup Blocked", "Please allow popups for this website.");
+  //     } else {
+  //       showError(
+  //         "Google Sign-in Failed",
+  //         "An error occurred during Google sign-in. Please try again."
+  //       );
+  //     }
+  //   }
+  // };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -199,7 +199,7 @@ const LoginFrom = ({ theme }: Props) => {
           isSubmit={true}
           onClick={() => {}}
         />
-        <ButtonCustom
+        {/* <ButtonCustom
           theme={theme}
           content="google login"
           color={
@@ -210,7 +210,7 @@ const LoginFrom = ({ theme }: Props) => {
           ButtonIcon={GoogleIcon}
           isSubmit={false}
           onClick={handleGoogleSignIn}
-        />
+        /> */}
         <ButtonCustom
           theme={theme}
           content="register"

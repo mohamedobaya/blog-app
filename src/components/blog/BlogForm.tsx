@@ -27,7 +27,7 @@ const BlogForm = ({ theme, blog }: Props) => {
   const { user } = useAppSelector((state) => state.auth);
   const isEditMode = !!blog;
   // ---- handling image url -------
-  const [blogImageURL, setblogImageURL] = useState("");
+  const [blogImageURL, setblogImageURL] = useState(blog?.imageURL || "");
   const blogImageHandler = (url: string) => {
     setblogImageURL(url);
   };
@@ -44,6 +44,7 @@ const BlogForm = ({ theme, blog }: Props) => {
     if (blog) {
       setValue("title", blog.title);
       setValue("body", blog.body);
+      setblogImageURL(blog.imageURL || ""); // Pre-fill image URL
     }
   }, [blog, setValue]);
 

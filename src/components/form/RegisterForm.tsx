@@ -85,24 +85,24 @@ const RegisterFrom = ({ theme }: Props) => {
     }
   };
 
-  const handleGoogleRegister = async () => {
-    try {
-      const result = await signInWithPopup(auth, googleProvider);
+  // const handleGoogleRegister = async () => {
+  //   try {
+  //     const result = await signInWithPopup(auth, googleProvider);
 
-      // Create user document for Google sign-in users too
-      await setDoc(doc(db, "users", result.user.uid), {
-        uid: result.user.uid,
-        username: result.user.displayName,
-        email: result.user.email,
-        photoURL: result.user.photoURL,
-      });
+  //     // Create user document for Google sign-in users too
+  //     await setDoc(doc(db, "users", result.user.uid), {
+  //       uid: result.user.uid,
+  //       username: result.user.displayName,
+  //       email: result.user.email,
+  //       photoURL: result.user.photoURL,
+  //     });
 
-      navigate("/"); // Redirect after successful Google sign-in
-    } catch (error) {
-      console.error("Google registration error:", error);
-      alert("Google registration failed. Please try again.");
-    }
-  };
+  //     navigate("/"); // Redirect after successful Google sign-in
+  //   } catch (error) {
+  //     console.error("Google registration error:", error);
+  //     alert("Google registration failed. Please try again.");
+  //   }
+  // };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -245,7 +245,7 @@ const RegisterFrom = ({ theme }: Props) => {
         onClick={() => {}}
       />
 
-      <ButtonCustom
+      {/* <ButtonCustom
         theme={theme}
         content="google register"
         color={
@@ -256,7 +256,7 @@ const RegisterFrom = ({ theme }: Props) => {
         ButtonIcon={GoogleIcon}
         isSubmit={false}
         onClick={handleGoogleRegister}
-      />
+      /> */}
     </Stack>
   );
 };
