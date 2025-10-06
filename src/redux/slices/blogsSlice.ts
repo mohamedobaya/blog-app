@@ -24,7 +24,7 @@ const getBlogs = async () => {
       bid: doc.id,
       title: docData.title,
       body: docData.body,
-      date: docData.data?.toDate().toISOString() || new Date().toISOString(),
+      date: docData.date?.toDate().toISOString() || new Date().toISOString(),
       imageURL: docData.imageURL,
       uid: docData.uid,
     } as Blog;
